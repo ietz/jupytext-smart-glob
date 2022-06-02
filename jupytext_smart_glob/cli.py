@@ -8,7 +8,7 @@ from jupytext_smart_glob.transform import transform_py_to_ipynb
 
 
 def main():
-    logging.basicConfig()
+    logging.basicConfig(level=logging.INFO)
 
     parser = argparse.ArgumentParser()
     parser.add_argument('files', nargs='*')

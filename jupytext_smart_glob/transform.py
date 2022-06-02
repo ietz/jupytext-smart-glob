@@ -14,8 +14,11 @@ def transform_py_to_ipynb(files: Iterable[Path]):
             ntbk = jupytext.read(f_in)
 
         if is_jupytext_notebook(ntbk):
+            logger.info(f'Processing {file}')
             with file.with_suffix('.ipynb').open('w') as f_out:
                 jupytext.write(ntbk, f_out, fmt='ipynb')
+        else:
+            logger.info(f'Skipping {file} because it isn\'t a Jupytext file')
 
 
 def is_jupytext_notebook(ntbk: NotebookNode) -> bool:
