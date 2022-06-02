@@ -2,7 +2,7 @@ import jupytext
 import pytest
 from nbformat.v4 import new_notebook, new_code_cell
 
-from jupytext_smart_glob import is_jupytext_notebook
+from jupytext_smart_glob.transform import is_jupytext_notebook
 
 plain_py_content = "print('Hello world!')\n"
 jupytext_py_percent_content = jupytext.writes(

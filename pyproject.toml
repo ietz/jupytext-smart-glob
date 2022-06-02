@@ -27,4 +27,4 @@ dev = ["pytest"]
 Homepage = "https://github.com/ietz/jupytext-smart-glob"
 
 [project.scripts]
-jupytext_smart_glob = "jupytext_smart_glob:main"
+jupytext_smart_glob = "jupytext_smart_glob.cli:main"

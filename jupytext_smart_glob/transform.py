@@ -1,4 +1,3 @@
-import argparse
 import logging
 from pathlib import Path
 from typing import Iterable
@@ -7,16 +6,6 @@ import jupytext
 from nbformat import NotebookNode
 
 logger = logging.getLogger(__name__)
-
-
-def main():
-    logging.basicConfig()
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('directory', nargs='?', type=Path, default=Path.cwd())
-
-    args = parser.parse_args()
-    transform_py_to_ipynb(files=args.directory)
 
 
 def transform_py_to_ipynb(files: Iterable[Path]):
