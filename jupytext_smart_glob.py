@@ -9,6 +9,16 @@ from nbformat import NotebookNode
 logger = logging.getLogger(__name__)
 
 
+def main():
+    logging.basicConfig()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('directory', nargs='?', type=Path, default=Path.cwd())
+
+    args = parser.parse_args()
+    transform_py_to_ipynb(files=args.directory)
+
+
 def transform_py_to_ipynb(files: Iterable[Path]):
     for file in files:
         with file.open('r') as f_in:
@@ -26,13 +36,3 @@ def is_jupytext_notebook(ntbk: NotebookNode) -> bool:
         return False
     else:
         return jupytext_meta.get('notebook_metadata_filter', '') != "-all"
-
-
-if __name__ == '__main__':
-    logging.basicConfig()
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('directory', nargs='?', type=Path, default=Path.cwd())
-
-    args = parser.parse_args()
-    transform_py_to_ipynb(files=args.directory)

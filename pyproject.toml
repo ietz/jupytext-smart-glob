@@ -1,0 +1,30 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jupytext-smart-glob"
+version = "1.0.0"
+description = "Automatically detect Jupytext files to transform into Jupyter Notebooks"
+readme = "README.md"
+authors = [{ name = "Tim Pietz", email = "tim@pietz.me" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "jupytext",
+    "nbformat",
+]
+requires-python = ">=3.5"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/ietz/jupytext-smart-glob"
+
+[project.scripts]
+jupytext_smart_glob = "jupytext_smart_glob:main"
