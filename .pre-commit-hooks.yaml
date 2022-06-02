@@ -1,0 +1,9 @@
+- id: jupytext_smart_glob
+  name: jupytext_smart_glob
+  description: Converts all Jupytext py files Jupyter Notebooks
+  language: python
+  entry: jupytext_smart_glob
+  require_serial: true
+  stages:
+    - post-checkout
+    - post-merge
