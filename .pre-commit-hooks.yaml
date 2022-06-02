@@ -8,3 +8,4 @@
   stages:
     - post-checkout
     - post-merge
+  always_run: true
