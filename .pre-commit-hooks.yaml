@@ -3,6 +3,7 @@
   description: Converts all Jupytext py files Jupyter Notebooks
   language: python
   entry: jupytext_smart_glob
+  types_or: [python]
   require_serial: true
   stages:
     - post-checkout
